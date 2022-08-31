@@ -1,28 +1,33 @@
-import PropTypes from 'prop-types';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getContacts } from "../../redux/Contacts/contact-operations";
 import ContactElement from './ContactElement/ContactElement';
 import css from "./ContactList.module.css"
 
-const ContactList = ({ contacts }) => {
-    const filter = useSelector(state => state.filter.filter);
-    const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name));
+const ContactList = () => {
+    const dispatch = useDispatch();
+    const contacts = useSelector(state => state.contacts.contacts);
     
+    // const filterValue = useSelector(state => state.contacts.filter);
+    // const filterContacts = contacts.filter(contact => contact.name.includes(filterValue));
+
+    useEffect(() => {
+        dispatch(getContacts());
+    }, [dispatch])
+    
+  
     return (
         <ul className={css.list}>
-            {filteredContacts.map(({ id, name, phone, avatar }) => {
+            {contacts.map(({ id, name, number }) => {
                 return (
                     <ContactElement
-                        contactItem={{ id, name, phone, avatar }}
+                        contactItem={{ id, name, number }}
                         key={id}
                     />
                 )
             })}
         </ul>
     )
-}
-
-ContactList.propTypes = {
-    contacts: PropTypes.array,
 }
 
 export default ContactList;

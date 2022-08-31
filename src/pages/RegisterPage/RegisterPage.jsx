@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../../redux/Auth'
+import { register } from '../../redux/Auth/auth-operations';
 
 const RegisterPage = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const RegisterPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(authOperations.register({ name, email, password }));
+        dispatch(register({ name, email, password }));
         setName("");
         setEmail("");
         setPassword("");

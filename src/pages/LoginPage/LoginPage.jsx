@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../../redux/Auth'
+import { logIn } from '../../redux/Auth/auth-operations';
 
 const LoginPage = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const LoginPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(authOperations.logIn({ email, password }));
+        dispatch(logIn({ email, password }));
         setEmail("");
         setPassword("");
     }
