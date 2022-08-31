@@ -11,8 +11,7 @@ const AppBar = () => {
     return (
         <Header>
             <Logo />
-            <Navigation />
-            {isLoggedIn ? <UserMenu /> : <AuthNavigation />}
+            {isLoggedIn ? (<><Navigation /><UserMenu /></>) : <AuthNavigation />}
         </Header>
     );
 }
