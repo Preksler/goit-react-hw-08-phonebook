@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getContacts, addContact, deleteContact } from './contact-operations';
+import { getContacts, addContact, deleteContact, editContact } from './contact-operations';
 
 const initialState = {
     contacts: [],
@@ -23,6 +23,13 @@ export const contactsSlice = createSlice({
         },
         [deleteContact.fulfilled](state, action) {
             state.contacts = state.contacts.filter(({ id }) => id !== action.payload);
+        },
+        [editContact.fulfilled](state, action) {
+            state.contacts = state.contacts.map(contact => {
+                return contact.id !== action.payload.id
+                    ? contact
+                    : { ...contact, ...action.payload };
+            });
         }
     }
 });

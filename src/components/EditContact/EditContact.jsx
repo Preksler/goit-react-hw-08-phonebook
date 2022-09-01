@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from '../../redux/Contacts/contact-operations'
+import { editContact } from '../../redux/Contacts/contact-operations'
 import toast from 'react-hot-toast';
-import css from "./ContactForm.module.css"
+import css from "../ContactForm/ContactForm.module.css";
 
-function ContactForm() {
-    const [name, setName] = useState("");
-    const [number, setNumber] = useState("");
+function EditContact({ id, editName, editNumber }) {
+    const [name, setName] = useState(editName);
+    const [number, setNumber] = useState(editNumber);
     const contacts = useSelector(state => state.contacts.contacts);
     const dispatch = useDispatch();
 
@@ -30,8 +30,8 @@ function ContactForm() {
             toast.error(`${name} is already in contacts`);
             return contacts;
         }
-        dispatch(addContact({ name, number }));
-        toast.success(`Contact ${name} is add`);
+        dispatch(editContact({ id, name, number }));
+        toast.success(`Contact ${name} is edit`);
         setName("");
         setNumber("");
     }
@@ -64,10 +64,10 @@ function ContactForm() {
                 />
             </label>
             <button type="submit" className={css.form__btn}>
-                Add contact
+                Save contact
             </button>
         </form>   
     )
 }
 
-export default ContactForm;
+export default EditContact;
