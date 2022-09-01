@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { filterContacts } from '../../redux/store';
-import css from "./ContactFilter.module.css"
+import { filterContacts } from '../../redux/Contacts/contact-slice';
+import css from "./ContactFilter.module.css";
 
 const ContactFilter = ({ title }) => {
     const dispatch = useDispatch();
