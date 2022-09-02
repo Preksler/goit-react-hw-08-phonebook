@@ -7,12 +7,12 @@ import EditContact from "../../EditContact/EditContact"
 import css from "./ContactElement.module.css"
 
 const ContactElement = ({ contactItem }) => {
-    const [isEditContact, setisEditContact] = useState(false);
+    const [isEditContact, setIsEditContact] = useState(false);
     const { id, name, number } = contactItem;
     const dispatch = useDispatch();
 
     const toggleEditContact = () => {
-        setisEditContact(!isEditContact);
+        setIsEditContact(!isEditContact);
     }
     
     return (
@@ -20,33 +20,38 @@ const ContactElement = ({ contactItem }) => {
             key={id}
             className={css.list__item}>
             <div>
-                <div className={css.list__name}>{name}</div>
-                <div className={css.list__number}>{number}</div>
+                <div className={css.list__name}>Name: {name}</div>
+                <div className={css.list__number}>Number: {number}</div>
             </div>
             <div>
-                <button
-                    className={css.list__btn}
-                    type="button"
-                    id={id}
-                    onClick={toggleEditContact}>
-                    Edit
-                </button>
-                <button
-                    className={css.list__btn}
-                    type="button"
-                    id={id}
-                    onClick={(e) => {
-                        dispatch(deleteContact(e.target.id))
-                        toast.success(`Contact ${name} is delete`);
-                    }}>
-                    Delete
-                </button>
+                {!isEditContact && 
+                <>
+                    <button
+                        className={css.list__btn}
+                        type="button"
+                        id={id}
+                        onClick={toggleEditContact}>
+                        Edit
+                    </button>
+                    <button
+                        className={css.list__btn}
+                        type="button"
+                        id={id}
+                        onClick={(e) => {
+                            dispatch(deleteContact(e.target.id))
+                            toast.success(`Contact ${name} is delete`);
+                        }}>
+                        Delete
+                    </button>
+                </>
+                }
             </div>
             {isEditContact &&
                 <EditContact
                     id={id}
                     editName={name}
                     editNumber={number}
+                    toggleEditContact={toggleEditContact}
                 />
             }
         </li>

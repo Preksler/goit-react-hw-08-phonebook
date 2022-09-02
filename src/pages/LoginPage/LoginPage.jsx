@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/Auth/auth-operations';
+import { Wrapper, Title, Form, Label, Input, Button } from "./LoginPage.styled";
 
 const LoginPage = () => {
     const dispatch = useDispatch();
@@ -28,28 +29,30 @@ const LoginPage = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>LoginPage</h2>
-            <label>
-                Email
-                <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={handleChange}>
-                </input>
-            </label>
-            <label>
-                Password
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={handleChange}>
-                </input>
-            </label>
-            <button type="submit">Log in</button>
-        </form>
+        <Wrapper>
+            <Form onSubmit={handleSubmit}>
+                <Title>LoginPage</Title>
+                <Label>
+                    Email
+                    <Input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}>
+                    </Input>
+                </Label>
+                <Label>
+                    Password
+                    <Input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}>
+                    </Input>
+                </Label>
+                <Button type="submit">Log in</Button>
+            </Form>
+        </Wrapper>
     );
 }
 export default LoginPage;

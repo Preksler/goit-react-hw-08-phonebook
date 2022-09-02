@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/Auth/auth-operations';
+import { Wrapper, Title, Form, Label, Input, Button } from "./RegisterPage.styled";
 
 const RegisterPage = () => {
     const dispatch = useDispatch();
@@ -33,37 +34,39 @@ const RegisterPage = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>RegisterPage</h2>
-            <label>
-                Name
-                <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={handleChange}>
-                </input>
-            </label>
-            <label>
-                Email
-                <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={handleChange}>
-                </input>
-            </label>
-            <label>
-                Password
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={handleChange}>
-                </input>
-            </label>
-            <button type="submit">Registration</button>
-        </form>
+        <Wrapper>
+            <Form onSubmit={handleSubmit}>
+                <Title>RegisterPage</Title>
+                <Label>
+                    Name
+                    <Input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={handleChange}>
+                    </Input>
+                </Label>
+                <Label>
+                    Email
+                    <Input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}>
+                    </Input>
+                </Label>
+                <Label>
+                    Password
+                    <Input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}>
+                    </Input>
+                </Label>
+                <Button type="submit">Registration</Button>
+            </Form>
+        </Wrapper>
     );
 }
 export default RegisterPage;
