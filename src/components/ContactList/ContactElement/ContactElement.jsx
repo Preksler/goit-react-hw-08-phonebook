@@ -4,7 +4,7 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { deleteContact } from '../../../redux/Contacts/contact-operations';
 import EditContact from "../../EditContact/EditContact"
-import css from "./ContactElement.module.css"
+import { ListItem, Name, Number, ListBTN } from "./ContactElement.styled";
 
 const ContactElement = ({ contactItem }) => {
     const [isEditContact, setIsEditContact] = useState(false);
@@ -16,25 +16,22 @@ const ContactElement = ({ contactItem }) => {
     }
     
     return (
-        <li
-            key={id}
-            className={css.list__item}>
+        <ListItem
+            key={id}>
             <div>
-                <div className={css.list__name}>Name: {name}</div>
-                <div className={css.list__number}>Number: {number}</div>
+                <Name>Name: {name}</Name>
+                <Number>Number: {number}</Number>
             </div>
             <div>
                 {!isEditContact && 
                 <>
-                    <button
-                        className={css.list__btn}
+                    <ListBTN
                         type="button"
                         id={id}
                         onClick={toggleEditContact}>
                         Edit
-                    </button>
-                    <button
-                        className={css.list__btn}
+                    </ListBTN>
+                    <ListBTN
                         type="button"
                         id={id}
                         onClick={(e) => {
@@ -42,7 +39,7 @@ const ContactElement = ({ contactItem }) => {
                             toast.success(`Contact ${name} is delete`);
                         }}>
                         Delete
-                    </button>
+                    </ListBTN>
                 </>
                 }
             </div>
@@ -54,7 +51,7 @@ const ContactElement = ({ contactItem }) => {
                     toggleEditContact={toggleEditContact}
                 />
             }
-        </li>
+        </ListItem>
     )
 }
 

@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const LogOutBtn = styled.button`
     font-family: inherit;
-    font-size: inherit;
+    font-size: 16px;
     font-weight: 700;
     color: #ffffff;
     background-color: #0640fd;
@@ -16,13 +16,31 @@ export const LogOutBtn = styled.button`
     border: none;
     border-radius: 4px;
     padding: 8px;
+    margin-left: 8px;
+    transition-property: background-color, color, transform;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
 
     &.active {
       border: 1px solid #ffffff;
     }
 
     &:hover:not(.active) {
-      background-color: #0600fd;
+      background-color: #0500C0;
+    }
+
+    @media screen and (max-width: 720px) {
+        font-size: 14px;
+    }
+`;
+
+export const UserWrapper = styled.div`
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+
+    @media screen and (max-width: 480px) {
+        display: none;
     }
 `;
 
@@ -30,10 +48,25 @@ export const UserText = styled.span`
     font-size: 16px;
     font-weight: 600;
     cursor: default;
+
+    @media screen and (max-width: 720px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 480px) {
+        display: none;
+    }
 `;
 
 export const UserNameText = styled.span`
     font-size: 16px;
     font-weight: 700;
-    margin-right: 15px;
+
+    @media screen and (max-width: 720px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 480px) {
+        display: none;
+    }
 `;

@@ -11,12 +11,23 @@ export const NavigationLink = styled(NavLink)`
    border: none;
    border-radius: 4px;
    padding: 8px;
+   transition-property: background-color, color, transform;
+   transition-duration: 300ms;
+   transition-timing-function: linear;
 
    &.active {
     border: 1px solid #ffffff;
    }
 
    &:hover:not(.active) {
-    background-color: #0600fd;
+    background-color: #0500C0;
+   }
+
+   @media screen and (max-width: 720px) {
+        font-size: 16px;
+    }
+
+   @media screen and (max-width: 480px) {
+      font-size: 14px;
    }
 `;

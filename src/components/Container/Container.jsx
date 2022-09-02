@@ -1,7 +1,7 @@
-import css from "./Container.module.css"
+import { Wrapper } from "./Container.styled";
 
 const Container = ({ children }) => {
-    return <div className={css.container}>{children}</div>
+    return <Wrapper>{children}</Wrapper>
 }
 
 export default Container;

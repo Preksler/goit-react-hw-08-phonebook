@@ -17,7 +17,7 @@ const AppBar = () => {
             <Wrapper>
                 <Logo />
                 {isLoggedIn && <Navigation />}
-            {isContacts && pathname === "/contacts" && <ContactFilter title="Find contacts by name" />}
+                {isContacts && pathname === "/contacts" && <ContactFilter title="Find contacts by name" />}
             </Wrapper>
             {isLoggedIn ? <UserMenu /> : <AuthNavigation />}
         </Header>

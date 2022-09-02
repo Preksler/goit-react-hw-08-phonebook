@@ -11,6 +11,10 @@ export const LogoLink = styled(Link)`
     margin-right: 8px;
 
     &:hover {
-        background-color: #0600fd;
+        background-color: #0500C0;
+    }
+
+    @media screen and (max-width: 720px) {
+        display: none;
     }
 `;

@@ -40,7 +40,7 @@ export const Input = styled.input`
     font-size: 14px;
 
     &:focus {
-        border: 1px solid #0640fd;
+        border: 1px solid #0500C0;
     }
 `;
 
@@ -54,9 +54,12 @@ export const Button = styled.button`
     border: none;
     border-radius: 4px;
     padding: 8px;
+    transition-property: background-color, color, transform;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
 
     &:hover {
-      background-color: #0600fd;
+      background-color: #0500C0;
     }
 `;
     

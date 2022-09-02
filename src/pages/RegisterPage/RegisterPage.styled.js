@@ -54,9 +54,12 @@ export const Button = styled.button`
     border: none;
     border-radius: 4px;
     padding: 8px;
+    transition-property: background-color, color, transform;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
 
     &:hover {
-      background-color: #0600fd;
+      background-color: #0500C0;
     }
 `;
     

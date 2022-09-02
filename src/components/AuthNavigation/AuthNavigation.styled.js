@@ -11,13 +11,16 @@ export const AuthNav = styled(NavLink)`
    border: none;
    border-radius: 4px;
    padding: 8px;
+   transition-property: background-color, color, transform;
+   transition-duration: 300ms;
+   transition-timing-function: linear;
 
    &.active {
     border: 1px solid #ffffff;
    }
 
    &:hover:not(.active) {
-    background-color: #0600fd;
+    background-color: #0500C0;
    }
 
    &:last-child {
