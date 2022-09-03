@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
 `;
 
 export const LogOutBtn = styled.button`
+    display: flex;
+    align-items: center;
     font-family: inherit;
     font-size: 16px;
     font-weight: 700;
@@ -32,6 +34,12 @@ export const LogOutBtn = styled.button`
     @media screen and (max-width: 720px) {
         font-size: 14px;
     }
+`;
+
+export const Icon = styled.span`
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
 `;
 
 export const UserWrapper = styled.div`

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../../redux/Contacts/contact-operations'
 import toast from 'react-hot-toast';
-import { Wrapper, Form, Label, Input, Button } from "./ContactForm.styled";
+import { Wrapper, Form, Label, Input, Button, Icon } from "./ContactForm.styled";
+import { AiOutlineUserAdd } from "react-icons/ai";
 
 function ContactForm() {
     const [name, setName] = useState("");
@@ -65,6 +66,7 @@ function ContactForm() {
                 
                 <Button type="submit">
                     Add contact
+                    <Icon><AiOutlineUserAdd size={22} /></Icon>
                 </Button>
             </Form>   
         </Wrapper>

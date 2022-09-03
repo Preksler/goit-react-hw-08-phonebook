@@ -34,6 +34,8 @@ export const Number = styled.div`
 `;
 
 export const ListBTN = styled.button`
+    display: flex;
+    align-items: center;
     padding: 5px 10px;
     border: none;
     color: #ffffff;
@@ -57,4 +59,9 @@ export const ListBTN = styled.button`
     &:last-child {
         margin-right: 0;
     }
+`;
+
+export const WrapperBTN = styled.div`
+    display: flex;
+    align-items: center;
 `;

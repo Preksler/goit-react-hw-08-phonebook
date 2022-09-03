@@ -46,6 +46,8 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+    display: flex;
+    align-items: center;
     font-family: inherit;
     font-size: 16px;
     font-weight: 700;
@@ -66,5 +68,11 @@ export const Button = styled.button`
     @media screen and (max-width: 720px) {
         font-size: 14px;
     }
+`;
+
+export const Icon = styled.span`
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
 `;
     

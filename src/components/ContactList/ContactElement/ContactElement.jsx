@@ -4,7 +4,8 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { deleteContact } from '../../../redux/Contacts/contact-operations';
 import EditContact from "../../EditContact/EditContact"
-import { ListItem, Name, Number, ListBTN } from "./ContactElement.styled";
+import { ListItem, Name, Number, ListBTN, WrapperBTN } from "./ContactElement.styled";
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
 const ContactElement = ({ contactItem }) => {
     const [isEditContact, setIsEditContact] = useState(false);
@@ -22,14 +23,14 @@ const ContactElement = ({ contactItem }) => {
                 <Name>Name: {name}</Name>
                 <Number>Number: {number}</Number>
             </div>
-            <div>
+            <WrapperBTN>
                 {!isEditContact && 
                 <>
                     <ListBTN
                         type="button"
                         id={id}
                         onClick={toggleEditContact}>
-                        Edit
+                        <AiOutlineEdit size={18} />
                     </ListBTN>
                     <ListBTN
                         type="button"
@@ -38,11 +39,11 @@ const ContactElement = ({ contactItem }) => {
                             dispatch(deleteContact(e.target.id))
                             toast.success(`Contact ${name} is delete`);
                         }}>
-                        Delete
+                        <AiOutlineDelete size={18} />
                     </ListBTN>
                 </>
                 }
-            </div>
+            </WrapperBTN>
             {isEditContact &&
                 <EditContact
                     id={id}

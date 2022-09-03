@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
+    position: relative;
 `;
 
 export const Input = styled.input`
     width: 100%;
+    height: 38px;
     padding: 10px;
     box-sizing: border-box;
     margin-right: 8px;
@@ -23,4 +25,17 @@ export const Input = styled.input`
     &:focus {
         border: 1px solid #0640fd;
     }
+`;
+
+export const Icon = styled.div`
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    color: #757575;
+
+    &:hover,
+    &:focus {
+        color: #0640fd;
+    }
+   
 `;
