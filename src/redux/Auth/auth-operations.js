@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -28,7 +29,7 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-        console.log(error.message);
+        toast.error('User not found, check your login or password');
     }
 });
 

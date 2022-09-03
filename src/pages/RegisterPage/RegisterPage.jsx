@@ -43,6 +43,7 @@ const RegisterPage = () => {
                         type="text"
                         name="name"
                         value={name}
+                        required
                         onChange={handleChange}>
                     </Input>
                 </Label>
@@ -52,6 +53,7 @@ const RegisterPage = () => {
                         type="email"
                         name="email"
                         value={email}
+                        required
                         onChange={handleChange}>
                     </Input>
                 </Label>
@@ -61,6 +63,7 @@ const RegisterPage = () => {
                         type="password"
                         name="password"
                         value={password}
+                        required
                         onChange={handleChange}>
                     </Input>
                 </Label>

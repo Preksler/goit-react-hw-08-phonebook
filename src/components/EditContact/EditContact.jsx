@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { editContact } from '../../redux/Contacts/contact-operations'
@@ -21,7 +22,7 @@ function EditContact({ id, editName, editNumber, toggleEditContact }) {
             default:
                 return;
         }
-    }
+    }    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -78,6 +79,13 @@ function EditContact({ id, editName, editNumber, toggleEditContact }) {
             </BtnWrapper>
         </Form>   
     )
+}
+
+EditContact.propTypes = {
+    id: PropTypes.string.isRequired,
+    editName: PropTypes.string.isRequired,
+    editNumber: PropTypes.string.isRequired,
+    toggleEditContact: PropTypes.func.isRequired,
 }
 
 export default EditContact;

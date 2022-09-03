@@ -23,6 +23,7 @@ export const Input = styled.input`
     outline: none;
 
     color: #757575;
+    
     background-color: #ffffff;
     font-weight: 400;
     font-size: 14px;

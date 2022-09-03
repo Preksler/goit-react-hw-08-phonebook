@@ -38,6 +38,7 @@ const LoginPage = () => {
                         type="email"
                         name="email"
                         value={email}
+                        required
                         onChange={handleChange}>
                     </Input>
                 </Label>
@@ -47,6 +48,7 @@ const LoginPage = () => {
                         type="password"
                         name="password"
                         value={password}
+                        required
                         onChange={handleChange}>
                     </Input>
                 </Label>
