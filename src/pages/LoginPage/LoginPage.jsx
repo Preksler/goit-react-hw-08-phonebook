@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Helmet } from "react-helmet";
 import { logIn } from '../../redux/Auth/auth-operations';
 import { Wrapper, Title, Form, Label, Input, Button } from "./LoginPage.styled";
 
@@ -30,8 +31,11 @@ const LoginPage = () => {
 
     return (
         <Wrapper>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <Form onSubmit={handleSubmit}>
-                <Title>LoginPage</Title>
+                <Title>Login page</Title>
                 <Label>
                     Email
                     <Input

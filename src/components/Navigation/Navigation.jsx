@@ -1,12 +1,12 @@
-import { NavigationLink } from "./Navigation.styled";
-import { FcContacts } from "react-icons/fc";
+import { NavigationLink, Icon } from "./Navigation.styled";
+import { RiContactsBook2Line } from "react-icons/ri";
 
 const Navigation = () => {
 
     return (
         <nav>
             <NavigationLink to="/contacts">
-                <FcContacts size={24} />
+                <Icon><RiContactsBook2Line size={24} /></Icon>
                 Contacts
             </NavigationLink>
         </nav>

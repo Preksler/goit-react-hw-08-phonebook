@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Helmet } from "react-helmet";
 import { register } from '../../redux/Auth/auth-operations';
 import { Wrapper, Title, Form, Label, Input, Button } from "./RegisterPage.styled";
 
@@ -35,8 +36,11 @@ const RegisterPage = () => {
 
     return (
         <Wrapper>
+            <Helmet>
+                <title>Registration</title>
+            </Helmet>
             <Form onSubmit={handleSubmit}>
-                <Title>RegisterPage</Title>
+                <Title>Registration page</Title>
                 <Label>
                     Name
                     <Input

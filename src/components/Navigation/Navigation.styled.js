@@ -33,3 +33,9 @@ export const NavigationLink = styled(NavLink)`
       font-size: 14px;
    }
 `;
+
+export const Icon = styled.span`
+   display: flex;
+   align-items: center;
+   margin-right: 4px;
+`;
