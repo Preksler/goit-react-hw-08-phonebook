@@ -15,9 +15,18 @@ export const ListItem = styled.li`
     }
 `;
 
+// export const AvatarWrapper
+
+export const WrapperContactInfo = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
 export const Name = styled.div`
     font-size: 16px;
     font-weight: 600;
+    margin-left: 8px;
+    margin-bottom: 4px;
 
     @media screen and (max-width: 720px) {
         font-size: 14px;
@@ -27,6 +36,7 @@ export const Name = styled.div`
 export const Number = styled.div`
     font-size: 16px;
     font-weight: 500;
+    margin-left: 8px;
 
     @media screen and (max-width: 720px) {
         font-size: 14px;

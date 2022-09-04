@@ -4,8 +4,9 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { deleteContact } from '../../../redux/Contacts/contact-operations';
 import EditContact from "../../EditContact/EditContact"
-import { ListItem, Name, Number, ListBTN, WrapperBTN } from "./ContactElement.styled";
+import { ListItem, WrapperContactInfo, Name, Number, ListBTN, WrapperBTN } from "./ContactElement.styled";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import Avatar from 'react-avatar';
 
 const ContactElement = ({ contactItem }) => {
     const [isEditContact, setIsEditContact] = useState(false);
@@ -19,10 +20,13 @@ const ContactElement = ({ contactItem }) => {
     return (
         <ListItem
             key={id}>
-            <div>
-                <Name>Name: {name}</Name>
-                <Number>Number: {number}</Number>
-            </div>
+            <WrapperContactInfo>
+                <Avatar name={name} size="50" round={true} />
+                <div>
+                    <Name>Name: {name}</Name>
+                    <Number>Number: {number}</Number>
+                </div>
+            </WrapperContactInfo>
             <WrapperBTN>
                 {!isEditContact && 
                 <>
