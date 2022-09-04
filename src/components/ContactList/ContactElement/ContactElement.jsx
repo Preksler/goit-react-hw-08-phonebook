@@ -39,8 +39,8 @@ const ContactElement = ({ contactItem }) => {
                     <ListBTN
                         type="button"
                         id={id}
-                        onClick={(e) => {
-                            dispatch(deleteContact(e.target.id))
+                        onClick={() => {
+                            dispatch(deleteContact(id))
                             toast.success(`Contact ${name} is delete`);
                         }}>
                         <AiOutlineDelete size={18} />
